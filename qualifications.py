@@ -1,45 +1,59 @@
-while True:
+while True:  # Validate a single grade
     try:
-     calificacion = float(input(f"Ingrese su nota: "))
-     if 0 <= calificacion <= 100:
+     qualification = float(input(f"enter note: "))
+     if 0 <= qualification <= 100:
         break
      else:
-        print("¡ingrese una nota entre 0 y 100!")
+        print("¡Enter a grade between 0 and 100!")
     except ValueError:
-       print("Entrada invalida. Ingrese un numero")
+       print("Invalid entry. Please enter a number.")
 
-if calificacion >=75:
-  print("¡Aprobado!")
+# Check if the grade is passing or failing
+if qualification >=75:
+  print("¡approved!")
 else:
-  print("¡Reprobado!")
+  print("¡failed!")
 
+   # Input multiple grades separated by commas
+notes = input("Enter notes: ")
+list_notes = [float(n.strip())for n in notes.split(",") if n.strip()]
 
-  notas = input("Ingresa notas Ej: 23,23,5,2,3,")
-  lista_notas = [float(n.strip())for n in notas.split(",") if n.strip()]
-
+    # Calculate the average of the grades
 suma = 0
-for nota in lista_notas:
+for nota in list_notes:
    suma += nota
-promedio = suma / len(lista_notas)
-print(f"su promedio de notas es: {promedio:.2f}")
+average = suma / len(list_notes)
+print(f"your grade point average is: {average:.2f}")
 
-
+    # Prompt the user to enter a value for comparison
 while True:
-   try:
-      valor = float(input("Ingrese un valor para comparar"))
-      break
-   except ValueError:
-      print("ingrese un numero valido")
+    entrance = input("Enter a value to compare: ")
+    if not entrance.strip():  # Si está vacío o solo espacios
+        print("No number was entered.")
+        continue
+    try:
+        valor = float(entrance)
+        break
+    except ValueError:
+        print("Please enter a valid number.")
 
-contador_Mayores= 0
-for nota in lista_notas:
-     if notas > valor:
-      contador_Mayores += 1
-      
+    # Count how many grades are greater than the comparison value
+counter_Majors= 0
+for nota in list_notes:
+     if nota > valor:
+      counter_Majors += 1
 
-      promedio = sum(lista_notas) / len(lista_notas)
+ 
+    # Display the result of the comparison     
+if counter_Majors >0:
+ print(f"Cantidad de calificaciones mayores que: {valor}:{counter_Majors}")
+else:
+   print(f"No se encontaron calificaiones mayores a {valor}. ")
 
-      print(f"Cantidad de calificaciones mayores que{valor}:{contador_Mayores}")
+#
+
+     
+
 
 
 
