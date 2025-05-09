@@ -10,6 +10,7 @@ def menu():
     print("5.Calculate value of the inventory")
     print("6.Exit!")
  
+#mune using while loop 
 def main():
     while True:
         menu()
@@ -42,9 +43,3 @@ def main():
 main()
 
 
-if 5 > 4:
-    print('5 es mayor a 4')
-elif 5 < 4:
-    print('5 es menor a 4')
-else:
-    print("Que verga")
