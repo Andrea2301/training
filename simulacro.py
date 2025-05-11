@@ -41,6 +41,19 @@ def addBook():
 
 addBook()
 
+def searchBook():
+ title = input("What a book you want search?: ")
+
+ for title in library:
+     title = library[0]
+     print(f"Book found: {title} ")
+ else:
+     print("the book dosen't exist in library")
+
+
+searchBook()
+
+
 
 
 
